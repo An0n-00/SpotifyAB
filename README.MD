@@ -40,7 +40,13 @@ You can verify the functionality by examining the contents of the `xpui.spa` fil
 
 ---
 
-**Note:** Injecting JavaScript into applications can alter their behavior. Make sure to adhere to the licensing terms and legal implications when modifying software. 🛡️
+## Useful Information
+
+> [!NOTE]  
+> Injecting JavaScript into applications can alter their behavior. Make sure to adhere to the licensing terms and legal implications when modifying software. 🛡️
+
+> [!TIP]
+> I've published another project called [Spotify-ad-hosts](https://www.github.com/An0n-00/Spotify-ad-hosts) that used to block Spotify ads by modifying the hosts file. It did not work out properly due to Spotify's changes in the ad-serving mechanism. However, I recommend to add the domains to the hosts file as an additional layer of protection and to block trackers. 📝 Check it out! 📦
 
 If you have any questions or encounter issues, please feel free to reach out by opening an issue on the GitHub repository. 📢
 

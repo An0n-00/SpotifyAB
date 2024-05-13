@@ -19,7 +19,7 @@ To implement the Spotify AdBlocker, follow these steps:
    - Replace the existing `xpui.spa` file with the downloaded `xpui.spa` from step 1.
 
 > [!CAUTION]  
-> ### Compatibility Notice:*
+> ### Compatibility Notice:
 > This method is specifically designed for the Spotify desktop app on Windows. **The Microsoft Store version is not supported.** 🖥️❌
 
 > [!NOTE]  
@@ -38,6 +38,7 @@ You can verify the functionality by examining the contents of the `xpui.spa` fil
 - **Disclaimer:** Use this software at your own risk. No warranties are provided. ⚠️
 
 ---
+<br>
 
 ## Useful Information
 

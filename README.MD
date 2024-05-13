@@ -11,13 +11,12 @@ This project utilizes JavaScript injection into the Spotify application to block
 To implement the Spotify AdBlocker, follow these steps:
 
 1. **Download the Required File:**
-   - Obtain the `xpui.spa` file from the [latest release](https://github.com/an0n-00/SpotifyAB/releases/latest/download/xpui.spa) in this repository.
+   - Obtain the `xpui.spa` file from the [latest release](https://github.com/An0n-00/SpotifyAB/releases) in this repository.
 
 2. **Replace the Existing File in Spotify Directory:**
    - Navigate to your Spotify installation directory:
      `C:\Users\_username_\AppData\Roaming\Spotify\Apps\`
    - Replace the existing `xpui.spa` file with the downloaded `xpui.spa` from step 1.
-
 
 > [!CAUTION]  
 > ### Compatibility Notice:*

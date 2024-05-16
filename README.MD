@@ -1,4 +1,5 @@
 <div align="center">
+
 # Spotify AdBlocker (SpotifyAB)
 
 🎵 Welcome to the Spotify AdBlocker (SpotifyAB) repository by An0n-00, designed to block ads directly within the Spotify desktop app for Windows. 🚫📺

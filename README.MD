@@ -6,6 +6,10 @@
 
 This project utilizes JavaScript injection into the Spotify application to block ads, providing an uninterrupted listening experience without intrusive interruptions. 🎧🔇
 
+### Anouncement
+
+There will be a client app to automate the installation process and to provide a user-friendly interface. Stay tuned for updates! 🔄
+
 ## Installation Guide
 
 To implement the Spotify AdBlocker, follow these steps:

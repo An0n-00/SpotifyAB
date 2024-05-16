@@ -18,6 +18,11 @@ To implement the Spotify AdBlocker, follow these steps:
      `C:\Users\_username_\AppData\Roaming\Spotify\Apps\`
    - Replace the existing `xpui.spa` file with the downloaded `xpui.spa` from step 1.
 
+3. **Restart Spotify:**
+   - Close and reopen the Spotify desktop app to apply the changes.
+
+You have successfully installed the Spotify AdBlocker! 🎉
+
 > [!CAUTION]  
 > ### Compatibility Notice:
 > This method is specifically designed for the Spotify desktop app on Windows. **The Microsoft Store version is not supported.** 🖥️❌
@@ -30,7 +35,9 @@ To implement the Spotify AdBlocker, follow these steps:
 You can verify the functionality by examining the contents of the `xpui.spa` file:
 
 - Unzip the `xpui.spa` file using any zip program.
-- Explore the extracted files. The main file of interest is `./SpotifyAB/block-sections.js` and the `index.html` file.
+- Explore the extracted files. The main file of interest is `./spotifyAB/block-sections.js` and the `index.html` file, which calls the js.
+- The `block-sections.js` file contains the JavaScript code that blocks the ads.
+- And the `xpui.js` file is the main JavaScript file that is injected into the Spotify app to block ads.
 
 ## Legal Information
 

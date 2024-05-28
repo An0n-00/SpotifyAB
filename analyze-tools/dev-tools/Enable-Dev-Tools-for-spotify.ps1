@@ -1,36 +1,3 @@
-function Kill-Spotify {
-    param (
-        [int]$maxAttempts = 5
-    )
-
-    for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
-        $allProcesses = Get-Process -ErrorAction SilentlyContinue
-
-        if ($allProcesses) {
-            $spotifyProcesses = $allProcesses | Where-Object { $_.ProcessName -like "*spotify*" -and $_.ProcessName -ne "SpotifyAB.exe" -and $_.Id -ne $PID }
-        }
-
-        if ($spotifyProcesses) {
-            foreach ($process in $spotifyProcesses) {
-                try {
-                    Stop-Process -Id $process.Id -Force
-                }
-                catch {
-                    # Ignore NoSuchProcess exception
-                }
-            }
-            Start-Sleep -Seconds 1
-        }
-        else {
-            break
-        }
-    }
-
-    if ($attempt -gt $maxAttempts) {
-        Write-Host "The maximum number of attempts to terminate a process has been reached."
-    }
-}
-
 function Update-BNKFile {
     param (
         [string]$bnk
@@ -187,8 +154,6 @@ function Dw-Spa {
     $n | ForEach-Object { Dw -u ($url -f $_) -p ($path -f $_) }
 
 }
-
-Kill-Spotify
 
 $p = Prepare-Paths
 

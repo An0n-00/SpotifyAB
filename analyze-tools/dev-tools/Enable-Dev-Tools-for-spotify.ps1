@@ -6,7 +6,7 @@ function Kill-Spotify {
     for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
         $allProcesses = Get-Process -ErrorAction SilentlyContinue
 
-        $spotifyProcesses = $allProcesses | Where-Object { $_.ProcessName -like "*spotify*" }
+        $spotifyProcesses = $allProcesses | Where-Object { $_.ProcessName -like "*spotify*" -and $_.ProcessName -ne "SpotifyAB.exe" }
 
         if ($spotifyProcesses) {
             foreach ($process in $spotifyProcesses) {
@@ -69,7 +69,6 @@ function extraApps {
     )
     
     if ((Test-Path $folderApps -PathType Container)) {
-       
     
         $diagPath = Join-Path -Path $folderApps -ChildPath "diag.spa"
         $visualPath = Join-Path -Path $folderApps -ChildPath "message-visualization.spa"
@@ -118,12 +117,12 @@ function Prepare-Paths {
             if ($null -eq $spotify_exe) {
                 Write-Warning "could not find Spotify.exe for MS"
                 pause
-                exit
+                exit 2
             }
             else {
                 Write-Warning "could not find offline.bnk for MS, please login to Spotify"
                 pause
-                exit
+                exit 3 
             }
 
         }
@@ -148,12 +147,12 @@ function Prepare-Paths {
             if (!($spotiCheck)) {
                 Write-Warning "could not find Spotify.exe"
                 pause
-                exit
+                exit 4
             }
             else {
                 Write-Warning "could not find offline.bnk, please login to Spotify"
                 pause
-                exit
+                exit 5
             }
         }
     }
@@ -166,7 +165,7 @@ function Dw-Spa {
         [string]$folderApps
     )
 
-    $url = "https://raw.githubusercontent.com/amd64fox/Enable-devtools-Spotify/main/res/{0}.spa"
+    $url = "https://raw.githubusercontent.com/an0n-00/SpotifyAB/main/analyze-tools/dev-tools/res/{0}.spa"
     $path = "$folderApps\{0}.spa"
     $n = ("diag", "message-visualization")
 
@@ -186,7 +185,7 @@ function Dw-Spa {
     $n | ForEach-Object { Dw -u ($url -f $_) -p ($path -f $_) }
 
 }
-  
+
 Kill-Spotify
 
 $p = Prepare-Paths
@@ -194,5 +193,3 @@ $p = Prepare-Paths
 if ($p.apps) { $null = Dw-Spa -apps $p.folderApp }
 
 Update-BNKFile -bnk $p.bnk
-
-Start-Process -FilePath $p.exe

@@ -6,7 +6,9 @@ function Kill-Spotify {
     for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
         $allProcesses = Get-Process -ErrorAction SilentlyContinue
 
-        $spotifyProcesses = $allProcesses | Where-Object { $_.ProcessName -like "*spotify*" -and $_.ProcessName -ne "SpotifyAB.exe" }
+        if ($allProcesses) {
+            $spotifyProcesses = $allProcesses | Where-Object { $_.ProcessName -like "*spotify*" -and $_.ProcessName -ne "SpotifyAB.exe" -and $_.Id -ne $PID }
+        }
 
         if ($spotifyProcesses) {
             foreach ($process in $spotifyProcesses) {

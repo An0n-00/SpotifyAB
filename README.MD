@@ -2,11 +2,11 @@
 
 # Spotify AdBlocker (SpotifyAB)
 
-🎵 Welcome to the Spotify AdBlocker (SpotifyAB) repository by An0n-00, designed to block ads directly within the Spotify desktop app for Windows. 🚫📺
+🎵 Welcome to the Spotify AdBlocker (SpotifyAB) repository by An0n-00, designed to block ads and trackers directly within the Spotify desktop app for Windows. 🚫📺
 
 ## Overview
 
-This project utilizes JavaScript injection into the Spotify application to block ads, providing an uninterrupted listening experience without intrusive interruptions. 🎧🔇
+This project utilizes JavaScript injection into the Spotify application to block ads and trackers, providing an uninterrupted listening experience without intrusive interruptions. 🎧🔇
 
 </div>
 
@@ -25,6 +25,7 @@ To implement the Spotify AdBlocker, follow these steps:
    - Navigate to your Spotify installation directory:
      `C:\Users\_username_\AppData\Roaming\Spotify\Apps\`
    - Replace the existing `xpui.spa` file with the downloaded `xpui.spa` from step 1.
+   - If you encounter issues, unzip the `xpui.spa` to `.\xpui\`
 
 3. **Restart Spotify:**
    - Close and reopen the Spotify desktop app to apply the changes.
@@ -43,22 +44,17 @@ You have successfully installed the Spotify AdBlocker! 🎉
 You can verify the functionality by examining the contents of the `xpui.spa` file:
 
 - Unzip the `xpui.spa` file using any zip program.
-- Explore the extracted files. The main file of interest is `./spotifyAB/block-sections.js` and the `index.html` file, which calls the js.
-- The `block-sections.js` file contains the JavaScript code that blocks the ads.
-- And the `xpui.js` file is the main JavaScript file that is injected into the Spotify app to block ads.
+- Explore the extracted files. The main file of interest is `./spotifyAB/AB.js` and the `index.html` file, which calls the JS file.
+- The `AB.js` file contains the JavaScript code that blocks the ads.
 
 ## Legal Information
 
 - **License:** This project is licensed under the MIT License. 📜
 - **Disclaimer:** Use this software at your own risk. No warranties are provided. ⚠️
 
----
 <br>
 
 ## Useful Information
-
-> [!NOTE]  
-> Injecting JavaScript into applications can alter their behavior. Make sure to adhere to the licensing terms and legal implications when modifying software. 🛡️
 
 > [!TIP]
 > I've published another project called [Spotify-ad-hosts](https://www.github.com/An0n-00/Spotify-ad-hosts) that used to block Spotify ads by modifying the hosts file. It did not work out properly due to Spotify's changes in the ad-serving mechanism. However, I recommend to add the domains to the hosts file as an additional layer of protection and to block trackers. 📝 Check it out! 📦

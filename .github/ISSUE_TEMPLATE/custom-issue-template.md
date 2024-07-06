@@ -1,9 +1,9 @@
 ---
-name: Custom Issue template
+name: Issue template
 about: Describe your Issue
-title: "[!BUG] [!FEATURE] Issue template"
+title: "[Issue] Issue template"
 labels: Issue
-assignees: ''
+assignees: 'An0n-00'
 
 ---
 

@@ -25,7 +25,10 @@ To implement the Spotify AdBlocker, follow these steps:
    - Navigate to your Spotify installation directory:
      `C:\Users\_username_\AppData\Roaming\Spotify\Apps\`
    - Replace the existing `xpui.spa` file with the downloaded `xpui.spa` from step 1.
-   - If you encounter issues, unzip the `xpui.spa` to `.\xpui\`
+   - ~If you encounter issues, unzip the `xpui.spa` to `.\xpui\`~
+   - Newly you have to have the `xpui.spa` and `\xpui` as a folder. (you can unzip the xpui.spa file with any other software that unzips .tar files)
+
+[Please always read the newest release, as it may contain newer information than written here!]
 
 3. **Restart Spotify:**
    - Close and reopen the Spotify desktop app to apply the changes.

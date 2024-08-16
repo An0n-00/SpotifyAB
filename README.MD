@@ -12,9 +12,26 @@ This project utilizes JavaScript injection into the Spotify application to block
 
 ### Anouncement
 
-There will be a client app to automate the installation process and to provide a user-friendly interface. Stay tuned for updates! 🔄
+We are happy to announce that we have released a client app that automates the installation process. You can download the client app from the [latest release](https://github.com/An0n-00/SpotifyAB/releases/latest/download/SpotifyAB-Installer.exe) in this repository. 🚀
 
 ## Installation Guide
+
+To install the Spotify AdBlocker, follow these steps:
+
+1. **Download the Client App:**
+   - Obtain the `SpotifyAB-Installer.exe` file from the [latest release](https://github.com/An0n-00/SpotifyAB/releases/latest/download/SpotifyAB-Installer.exe)
+   - Run the installer to install the Spotify AdBlocker.
+   - Choose the option that you want to do.
+
+2. **Restart Spotify:**
+Done! You have successfully installed the Spotify AdBlocker! 🎉
+
+### Visuals
+
+Here you have some images of the client app:
+![Visual of the Client app](/docs/pics/visuals.png)
+
+## Manual Installation Guide
 
 To implement the Spotify AdBlocker, follow these steps:
 

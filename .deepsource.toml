@@ -1,0 +1,13 @@
+# DeepSource configuration file
+# Learn how to configure: https://docs.deepsource.com/docs/configuration
+version = 1
+exclude_patterns = ["node_modules", "bower_components", "out", "bin", "build", "dist"]
+test_patterns = ["**/test/**", "**/__tests__/**", "**/*.spec.ts", "**/*.spec.js", "**/*.test.ts", "**/*.test.js"]
+
+[[analyzers]]
+  name = "csharp"
+  enabled = true
+
+[[analyzers]]
+  name = "javascript"
+  enabled = true

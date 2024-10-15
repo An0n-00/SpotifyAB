@@ -1,12 +1,57 @@
+function Kill-Spotify {
+    param (
+        [int]$maxAttempts = 5
+    )
+
+    for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+        $allProcesses = Get-Process -ErrorAction SilentlyContinue
+
+        $spotifyProcesses = $allProcesses | Where-Object { $_.ProcessName -like "*spotify*" }
+
+        if ($spotifyProcesses) {
+            foreach ($process in $spotifyProcesses) {
+                try {
+                    Stop-Process -Id $process.Id -Force
+                }
+                catch {
+                    # Ignore NoSuchProcess exception
+                }
+            }
+            Start-Sleep -Seconds 1
+        }
+        else {
+            break
+        }
+    }
+
+    if ($attempt -gt $maxAttempts) {
+        Write-Host "The maximum number of attempts to terminate a process has been reached."
+    }
+}
+
 function Update-BNKFile {
     param (
         [string]$bnk
     )
 
-    $ANSI = [Text.Encoding]::GetEncoding(1251)
-    $old = [IO.File]::ReadAllText($bnk, $ANSI)
-    $new = $old -replace '(?<=app-developer..|app-developer>)[01]', '2'
+$ANSI = [Text.Encoding]::GetEncoding(1251)
+$old = [IO.File]::ReadAllText($bnk, $ANSI)
+
+$pattern = '(?<=app-developer..|app-developer>)'
+
+switch -Regex ($old) {
+    "${pattern}2" {
+        $new = $old -replace "${pattern}2", '1'
+    }
+    "${pattern}[01]" {
+        $new = $old -replace "${pattern}[01]", '2'
+    }
+}
+
+if ($new -ne $null) {
     [IO.File]::WriteAllText($bnk, $new, $ANSI)
+}
+
 }
 
 function Check-Os {
@@ -38,6 +83,7 @@ function extraApps {
     )
     
     if ((Test-Path $folderApps -PathType Container)) {
+       
     
         $diagPath = Join-Path -Path $folderApps -ChildPath "diag.spa"
         $visualPath = Join-Path -Path $folderApps -ChildPath "message-visualization.spa"
@@ -154,9 +200,13 @@ function Dw-Spa {
     $n | ForEach-Object { Dw -u ($url -f $_) -p ($path -f $_) }
 
 }
+  
+Kill-Spotify
 
 $p = Prepare-Paths
 
 if ($p.apps) { $null = Dw-Spa -apps $p.folderApp }
 
 Update-BNKFile -bnk $p.bnk
+
+Start-Process -FilePath $p.exe

@@ -405,7 +405,7 @@ public partial class Dashboard : Form
         try
         {
             var scriptUrl =
-                "https://raw.githubusercontent.com/An0n-00/SpotifyAB/main/analyze-tools/dev-tools/Enable-Dev-Tools-for-spotify.ps1";
+                "https://raw.githubusercontent.com/An0n-00/SpotifyAB/refs/heads/main/analyze-tools/dev-tools/Enable-Dev-Tools-for-spotify.ps1";
             var installationFolder = AppDomain.CurrentDomain.BaseDirectory + "\\addons\\";
             var scriptPath = installationFolder + "enable-dev.ps1";
             if (!Directory.Exists(installationFolder)) Directory.CreateDirectory(installationFolder);

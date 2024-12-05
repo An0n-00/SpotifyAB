@@ -45,7 +45,8 @@ To implement the Spotify AdBlocker, follow these steps:
    - ~If you encounter issues, unzip the `xpui.spa` to `.\xpui\`~
    - Newly you have to have the `xpui.spa` and `\xpui` as a folder. (you can unzip the xpui.spa file with any other software that unzips .tar files)
 
-[Please always read the newest release, as it may contain newer information than written here!]
+> [!important]
+> Please always read the newest release, as it may contain newer information than written here
 
 3. **Restart Spotify:**
    - Close and reopen the Spotify desktop app to apply the changes.
@@ -55,9 +56,6 @@ You have successfully installed the Spotify AdBlocker! 🎉
 > [!CAUTION]  
 > ### Compatibility Notice:
 > This method is specifically designed for the Spotify desktop app on Windows. **The Microsoft Store version is not supported.** 🖥️❌
-
-> [!NOTE]  
-> There is a client app in progress to automate the installation process. Stay tuned for updates! 🔄
 
 ## Verification Process
 
@@ -72,7 +70,7 @@ You can verify the functionality by examining the contents of the `xpui.spa` fil
 - **License:** This project is licensed under the MIT License. 📜
 - **Disclaimer:** Use this software at your own risk. No warranties are provided. ⚠️
 
-<br>
+---
 
 ## Useful Information
 

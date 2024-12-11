@@ -7,8 +7,5 @@
     <Compile Update="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="overri.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

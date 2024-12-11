@@ -1,4 +1,5 @@
-﻿namespace SpotifyAB
+﻿
+namespace SpotifyAB
 {
     partial class Dashboard
     {
@@ -35,8 +36,7 @@
             issuebtn = new Button();
             devbtn = new Button();
             groupBox1 = new GroupBox();
-            uninstallABbtn = new Button();
-            overri = new Button();
+            uninstallBtn = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -103,7 +103,7 @@
             // devbtn
             // 
             devbtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            devbtn.Location = new Point(642, 499);
+            devbtn.Location = new Point(642, 525);
             devbtn.Name = "devbtn";
             devbtn.Size = new Size(301, 110);
             devbtn.TabIndex = 4;
@@ -114,36 +114,25 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            groupBox1.Controls.Add(uninstallABbtn);
+            groupBox1.Controls.Add(uninstallBtn);
             groupBox1.Controls.Add(installBtn);
-            groupBox1.Location = new Point(12, 365);
+            groupBox1.Location = new Point(12, 383);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(304, 244);
+            groupBox1.Size = new Size(304, 252);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "SpotifyAB Management";
             // 
-            // uninstallABbtn
+            // uninstallBtn
             // 
-            uninstallABbtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            uninstallABbtn.Location = new Point(6, 144);
-            uninstallABbtn.Name = "uninstallABbtn";
-            uninstallABbtn.Size = new Size(292, 94);
-            uninstallABbtn.TabIndex = 6;
-            uninstallABbtn.Text = "Uninstall AB from Spotify";
-            uninstallABbtn.UseVisualStyleBackColor = true;
-            uninstallABbtn.Click += uninstallABbtn_Click;
-            // 
-            // overri
-            // 
-            overri.Anchor = AnchorStyles.Bottom;
-            overri.Location = new Point(397, 535);
-            overri.Name = "overri";
-            overri.Size = new Size(161, 74);
-            overri.TabIndex = 6;
-            overri.Text = "Override Options";
-            overri.UseVisualStyleBackColor = true;
-            overri.Click += overri_Click;
+            uninstallBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            uninstallBtn.Location = new Point(6, 142);
+            uninstallBtn.Name = "uninstallBtn";
+            uninstallBtn.Size = new Size(292, 104);
+            uninstallBtn.TabIndex = 6;
+            uninstallBtn.Text = "Uninstall AB from Spotify";
+            uninstallBtn.UseVisualStyleBackColor = true;
+            uninstallBtn.Click += uninstallABbtn_Click;
             // 
             // Dashboard
             // 
@@ -152,8 +141,7 @@
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(955, 621);
-            Controls.Add(overri);
+            ClientSize = new Size(955, 647);
             Controls.Add(groupBox1);
             Controls.Add(devbtn);
             Controls.Add(issuebtn);
@@ -167,12 +155,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SpotifyAB Dashboard";
             WindowState = FormWindowState.Maximized;
-            Load += Dashboard_Load;
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
-
         #endregion
 
 
@@ -181,8 +167,7 @@
         private Button issuebtn;
         private Button devbtn;
         private GroupBox groupBox1;
-        private Button uninstallABbtn;
-        private Button overri;
-        private static TextBox logBox;
+        private Button uninstallBtn;
+        private TextBox logBox;
     }
 }

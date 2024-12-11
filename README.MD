@@ -77,7 +77,7 @@ If you want to build the client app yourself, follow these steps:
    cd SpotifyAB/SpotifyABClient
    ```
 
-2. ** Build the App: ** 
+2. **Build the App:** 
    ```bash
    dotnet build --Configuration Release
    cd ./bin

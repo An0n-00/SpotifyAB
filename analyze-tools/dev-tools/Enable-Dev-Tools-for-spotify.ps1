@@ -6,7 +6,7 @@ function Kill-Spotify {
     for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
         $allProcesses = Get-Process -ErrorAction SilentlyContinue
 
-        $spotifyProcesses = $allProcesses | Where-Object { $_.ProcessName -like "*spotify*" }
+        $spotifyProcesses = $allProcesses | Where-Object { $_.ProcessName -like "*spotify*" -and $_.ProcessName -ne "SpotifyAB" }
 
         if ($spotifyProcesses) {
             foreach ($process in $spotifyProcesses) {
@@ -208,5 +208,3 @@ $p = Prepare-Paths
 if ($p.apps) { $null = Dw-Spa -apps $p.folderApp }
 
 Update-BNKFile -bnk $p.bnk
-
-Start-Process -FilePath $p.exe

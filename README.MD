@@ -65,6 +65,34 @@ You can verify the functionality by examining the contents of the `xpui.spa` fil
 - Explore the extracted files. The main file of interest is `./spotifyAB/AB.js` and the `index.html` file, which calls the JS file.
 - The `AB.js` file contains the JavaScript code that blocks the ads.
 
+---
+
+## 🌟 How to Build the Client App
+
+If you want to build the client app yourself, follow these steps:
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/An0n-00/SpotifyAB.git
+   cd SpotifyAB/SpotifyABClient
+   ```
+
+2. **Set Up the Development Environment:**
+   - Install [Visual Studio](https://visualstudio.microsoft.com/) with the **.NET desktop development** workload.
+   - Open the `SpotifyABClient.sln` solution file in Visual Studio.
+
+3. **Build the App:**
+   - In Visual Studio, set the build configuration to `Release`.
+   - Click on **Build > Build Solution** (or press `Ctrl+Shift+B`).
+   - The built executable will be located in the `bin\Release\` directory.
+
+4. **Test Your Build:**
+   - Run the built `SpotifyAB-Installer.exe` and verify its functionality.
+
+🎉 You’ve successfully built the SpotifyAB client app!
+
+---
+
 ## Legal Information
 
 - **License:** This project is licensed under the MIT License. 📜

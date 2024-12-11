@@ -77,17 +77,14 @@ If you want to build the client app yourself, follow these steps:
    cd SpotifyAB/SpotifyABClient
    ```
 
-2. **Set Up the Development Environment:**
-   - Install [Visual Studio](https://visualstudio.microsoft.com/) with the **.NET desktop development** workload.
-   - Open the `SpotifyABClient.sln` solution file in Visual Studio.
+2. ** Build the App: ** 
+   ```bash
+   dotnet build --Configuration Release
+   cd ./bin
+   ```
 
-3. **Build the App:**
-   - In Visual Studio, set the build configuration to `Release`.
-   - Click on **Build > Build Solution** (or press `Ctrl+Shift+B`).
-   - The built executable will be located in the `bin\Release\` directory.
-
-4. **Test Your Build:**
-   - Run the built `SpotifyAB-Installer.exe` and verify its functionality.
+3. **Test Your Build:**
+   - Run the built `SpotifyAB.exe` and verify its functionality.
 
 🎉 You’ve successfully built the SpotifyAB client app!
 

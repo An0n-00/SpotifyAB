@@ -3,7 +3,6 @@ using SharpCompress.Common;
 using SharpCompress.Readers;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using Windows.UI.Notifications;
 
 namespace SpotifyAB
 {
@@ -13,7 +12,7 @@ namespace SpotifyAB
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool FlashWindow(IntPtr hwnd, bool bInvert);
 
-        private ToolTip toolTip1;
+        private ToolTip toolTip;
 
         public Dashboard()
         {
@@ -55,8 +54,8 @@ namespace SpotifyAB
         {
             Log("Starting SpotifyAB");
 
-            dashboard.toolTip1 = new ToolTip();
-            dashboard.toolTip1.SetToolTip(dashboard.linkLabel1, "Visit SpotifyAB's GitHub Repository");
+            dashboard.toolTip = new ToolTip();
+            dashboard.toolTip.SetToolTip(dashboard.linkLabel1, "Visit SpotifyAB's GitHub Repository");
 
             if (IsSpotifyInstalled())
             {
@@ -65,26 +64,28 @@ namespace SpotifyAB
                 var savedVersion = GetRegistryKey("SpotifyVersion");
                 if (string.IsNullOrEmpty(savedVersion))
                 {
-                    CheckSpotifyABInstallation(dashboard);
+                    CheckSpotifyAbInstallation(dashboard);
                 }
-                else if (currentVersion != savedVersion)
+                else if (currentVersion != savedVersion && IsSpotifyAbInstalled())
                 {
-                    SetRegistryKey("Installed", "False");
+                    //SetRegistryKey("Installed", "True");
                     Log("Spotify version has changed. Reinstalling SpotifyAB on in this new version.");
-                    if (MessageBox.Show("Spotify version has changed. Reinstall SpotifyAB?", "Update SpotifyAB", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show(@"Spotify version has changed. Reinstall SpotifyAB?", @"Update SpotifyAB", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        DownloadAndInstallSpotifyAB(dashboard).Wait();
+                        DeleteSpotifyAbFiles();
+                        SetRegistryKey("Installed", "False");
+                        installBtn_Click(dashboard, null);
                         Log("SpotifyAB reinstalled.");
                     }
                     else
                     {
-                        CheckSpotifyABInstallation(dashboard);
+                        CheckSpotifyAbInstallation(dashboard);
                         Log("SpotifyAB not reinstalled.");
                     }
                 }
                 else
                 {
-                    CheckSpotifyABInstallation(dashboard);
+                    CheckSpotifyAbInstallation(dashboard);
                 }
             }
             else
@@ -102,24 +103,25 @@ namespace SpotifyAB
         private  bool IsSpotifyInstalled() =>
             File.Exists($@"C:\Users\{Environment.UserName}\AppData\Roaming\Spotify\Spotify.exe");
 
-        private  void CheckSpotifyABInstallation(Dashboard dashboard)
+        private  void CheckSpotifyAbInstallation(Dashboard dashboard)
         {
-            var installed = IsSpotifyABInstalled();
+            var installed = IsSpotifyAbInstalled();
             if (installed) SetRegistryKey("SpotifyVersion", GetSpotifyVersion());
             dashboard.installBtn.Enabled = !installed;
             dashboard.uninstallBtn.Enabled = installed;
             Log(installed ? "SpotifyAB is installed." : "SpotifyAB is not installed.");
         }
 
-        private  bool IsSpotifyABInstalled() =>
+        private  bool IsSpotifyAbInstalled() =>
             Registry.CurrentUser.OpenSubKey("Software\\SpotifyAB")?.GetValue("Installed")?.ToString() == "True";
 
         private  void HandleSpotifyNotInstalled(Dashboard dashboard)
         {
-            Log("Spotify is not installed.");
+            Log("Spotify is not installed (or broken).");
             ShowError(dashboard, "Please install Spotify first. SpotifyAB only works with the desktop version.");
             if (MessageBox.Show("Open Spotify download page?", "Download Spotify", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 OpenUrl("https://www.spotify.com/download/windows/#download-cdn");
+            Log("Direct Installer link: https://download.scdn.co/SpotifySetup.exe");
 
             SetRegistryKey("Installed", "False");
             DisableButtons(dashboard);
@@ -152,11 +154,18 @@ namespace SpotifyAB
             logBox.AppendText($"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] - {message}\r\n");
         }
 
-        private  void ShowError(Dashboard dashboard, string message)
+        private void ShowError(Dashboard dashboard, string message)
         {
             if (dashboard != null)
             {
-                dashboard.Invoke((MethodInvoker)delegate { MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); });
+                if (dashboard.IsHandleCreated)
+                {
+                    dashboard.Invoke((MethodInvoker)delegate { MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); });
+                }
+                else
+                {
+                    MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -183,37 +192,21 @@ namespace SpotifyAB
         {
             if (!IsSpotifyInstalledProperly())
             {
-                ShowError(this, "Spotify is installed strangely. I cannot find the XPUI file.");
+                ShowError(this, "Spotify is installed strangely. I cannot find the XPUI file. Please reinstall Spotify.");
+                HandleSpotifyNotInstalled(this);
                 Log("Error: Cannot find the XPUI file");
                 return;
             }
 
-            await DownloadAndInstallSpotifyAB(this);
+            await DownloadAndInstallSpotifyAb(this);
             installBtn.Enabled = false;
             uninstallBtn.Enabled = true;
         }
 
-        private bool IsSpotifyInstalledProperly()
-        {
-            if (File.Exists($@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Spotify\Apps\xpui.spa"))
-            {
-                return true;
-            }
-            else
-            {
-                if (File.Exists($@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Spotify\Apps\xpui-original.spa"))
-                {
-                    File.Move($@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Spotify\Apps\xpui-original.spa", $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Spotify\Apps\xpui.spa");
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+        private bool IsSpotifyInstalledProperly() =>
+            File.Exists($@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Spotify\Apps\xpui.spa");
 
-        private  async Task DownloadAndInstallSpotifyAB(Dashboard dashboard)
+        private  async Task DownloadAndInstallSpotifyAb(Dashboard dashboard)
         {
             var fileUrl = "https://github.com/An0n-00/SpotifyAB/releases/latest/download/xpui.spa";
             var downloadPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "xpui.spa");
@@ -278,9 +271,9 @@ namespace SpotifyAB
                 {
                     ShowError(dashboard, $"An error occurred: {d.Message}");
                     Log("An error occurred while downloading the file.");
+                    
                     Log(d.InnerException.ToString());
-                    success = 1;
-                    return;
+                    throw new Exception("An error occurred while downloading the file.");
                 }
 
                 // Move the downloaded file to the Spotify directory
@@ -327,7 +320,6 @@ namespace SpotifyAB
 
                 SetRegistryKey("Installed", "True");
                 
-                Log("SpotifyAB installed successfully.");
                 ShowSuccess("SpotifyAB installed successfully.");
             }
             catch (Exception f)
@@ -348,7 +340,7 @@ namespace SpotifyAB
 
         private  void BackupOriginalFile(string destinationPath)
         {
-            if (File.Exists(destinationPath) && !IsSpotifyABInstalled())
+            if (File.Exists(destinationPath) && !IsSpotifyAbInstalled())
             {
                 File.Move(destinationPath, destinationPath.Replace(".spa", "-original.spa"));
             }
@@ -419,20 +411,19 @@ namespace SpotifyAB
 
         private void uninstallABbtn_Click(object sender, EventArgs e)
         {
-            if (!IsSpotifyABInstalled())
+            if (!IsSpotifyAbInstalled())
             {
                 ShowError(this, "SpotifyAB is not installed.");
                 return;
             }
 
-            DeleteSpotifyABFiles();
+            DeleteSpotifyAbFiles();
             ShowSuccess("SpotifyAB uninstalled successfully.");
             installBtn.Enabled = true;
             uninstallBtn.Enabled = false;
-            SetRegistryKey("Installed", "False");
         }
 
-        private  void DeleteSpotifyABFiles()
+        private  void DeleteSpotifyAbFiles()
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var xpuiPath = Path.Combine(appDataPath, "Spotify\\Apps\\xpui.spa");
@@ -441,6 +432,7 @@ namespace SpotifyAB
             if (File.Exists(xpuiPath)) File.Delete(xpuiPath);
             if (Directory.Exists(Path.Combine(appDataPath, "Spotify\\Apps\\xpui"))) Directory.Delete(Path.Combine(appDataPath, "Spotify\\Apps\\xpui"), true);
             if (File.Exists(xpuiOriginalPath)) File.Move(xpuiOriginalPath, xpuiPath);
+            SetRegistryKey("Installed", "False");
         }
     }
 }

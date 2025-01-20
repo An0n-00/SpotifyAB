@@ -1,7 +1,7 @@
+document.querySelector('.Upqw01TOXETOmR5Td7Dj').remove(); // remove premium button in header
+
 function sectionBlock(e, type) {
-
-
-// block subfeeds
+    // block subfeeds
     if (type === "podcast" || type === "all") {
         const style = document.createElement("style");
         style.innerHTML = `

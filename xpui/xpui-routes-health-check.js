@@ -1,1 +1,1 @@
-"use strict";(("undefined"!=typeof self?self:global).webpackChunkclient_web=("undefined"!=typeof self?self:global).webpackChunkclient_web||[]).push([[8212],{28719:(e,l,n)=>{n.r(l),n.d(l,{HealthCheck:()=>s,default:()=>t});var c=n(86070),s=function(){return(0,c.jsx)("h1",{children:"Success!"})};const t=s}}]);
+"use strict";(("undefined"!=typeof self?self:global).webpackChunkclient_web=("undefined"!=typeof self?self:global).webpackChunkclient_web||[]).push([[8212],{13648:(e,l,s)=>{s.r(l),s.d(l,{default:()=>c});var n=s(86070);const c=()=>(0,n.jsx)("h1",{children:"Success!"})}}]);

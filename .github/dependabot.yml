@@ -12,10 +12,12 @@ updates:
     assignees:
       - "An0n-00"
     commit-message:
-      prefix: "[version bump]"
+      prefix: "Dependency Bump "
       include: "scope"
     labels:
       - "dependencies"
     reviewers:
       - "An0n-00"
     rebase-strategy: "auto"
+    ignore:
+      - dependeny-name: "System.Management.Automation"

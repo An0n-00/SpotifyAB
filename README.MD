@@ -92,8 +92,27 @@ If you want to build the client app yourself, follow these steps:
 
 ## Legal Information
 
-- **License:** This project is licensed under the MIT License. 📜
+- **License:** SpotifyAB by An0n-00 is [licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](/license)
 - **Disclaimer:** Use this software at your own risk. No warranties are provided. ⚠️
+
+---
+
+## Contributors
+
+<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors -end -->
+
+---
+
+## Star History
+
+<a href="https://star-history.com/#An0n-00/SpotifyAB&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=An0n-00/SpotifyAB&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=An0n-00/SpotifyAB&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=An0n-00/SpotifyAB&type=Date" />
+ </picture>
+</a>
 
 ---
 

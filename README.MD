@@ -1,6 +1,8 @@
 <div align="center">
 
-# Spotify AdBlocker (SpotifyAB)
+# Spotify AdBlocker (SpotifyAB)  
+
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/An0n-00/SpotifyAB?display_name=tag&label=Latest%20Release&color=brightgreen) ![GitHub issues](https://img.shields.io/github/issues/An0n-00/SpotifyAB?label=Issues&color=red) ![GitHub forks](https://img.shields.io/github/forks/An0n-00/SpotifyAB?label=Forks&color=blue) ![GitHub stars](https://img.shields.io/github/stars/An0n-00/SpotifyAB?label=Stars&color=yellow)
 
 🎵 Welcome to the Spotify AdBlocker (SpotifyAB) repository by An0n-00, designed to block ads and trackers directly within the Spotify desktop app for Windows. 🚫📺
 

@@ -2,7 +2,16 @@
 
 # Spotify AdBlocker (SpotifyAB)  
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/An0n-00/SpotifyAB?display_name=tag&label=Latest%20Release&color=brightgreen) ![GitHub issues](https://img.shields.io/github/issues/An0n-00/SpotifyAB?label=Issues&color=red) ![GitHub forks](https://img.shields.io/github/forks/An0n-00/SpotifyAB?label=Forks&color=blue) ![GitHub stars](https://img.shields.io/github/stars/An0n-00/SpotifyAB?label=Stars&color=yellow)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/An0n-00/SpotifyAB?display_name=tag&label=Latest%20Release&color=brightgreen)](https://github.com/An0n-00/SpotifyAB/releases)  
+[![GitHub issues](https://img.shields.io/github/issues/An0n-00/SpotifyAB?label=Issues&color=red)](https://github.com/An0n-00/SpotifyAB/issues)  
+[![GitHub forks](https://img.shields.io/github/forks/An0n-00/SpotifyAB?label=Forks&color=blue)](https://github.com/An0n-00/SpotifyAB/network/members)  
+[![GitHub stars](https://img.shields.io/github/stars/An0n-00/SpotifyAB?label=Stars&color=yellow)](https://github.com/An0n-00/SpotifyAB/stargazers)  
+[![GitHub license](https://img.shields.io/github/license/An0n-00/SpotifyAB?label=License&color=orange)](https://github.com/An0n-00/SpotifyAB/blob/main/LICENSE)  
+[![GitHub last commit](https://img.shields.io/github/last-commit/An0n-00/SpotifyAB?label=Last%20Commit&color=teal)](https://github.com/An0n-00/SpotifyAB/commits/main)  
+[![GitHub contributors](https://img.shields.io/github/contributors/An0n-00/SpotifyAB?label=Contributors&color=gold)](https://github.com/An0n-00/SpotifyAB/graphs/contributors)  
+[![GitHub downloads](https://img.shields.io/github/downloads/An0n-00/SpotifyAB/total?label=Downloads&color=purple)](https://github.com/An0n-00/Spotify
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/An0n-00/SpotifyAB?label=Monthly%20Commits&color=blue)](https://github.com/An0n-00/SpotifyAB/pulse)  
+[![GitHub open pull requests](https://img.shields.io/github/issues-pr/An0n-00/SpotifyAB?label=Open%20PRs&color=cyan)](https://github.com/An0n-00/SpotifyAB/pulls)  
 
 🎵 Welcome to the Spotify AdBlocker (SpotifyAB) repository by An0n-00, designed to block ads and trackers directly within the Spotify desktop app for Windows. 🚫📺
 

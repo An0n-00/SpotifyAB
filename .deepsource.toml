@@ -10,4 +10,4 @@ test_patterns = ["**/test/**", "**/__tests__/**", "**/*.spec.ts", "**/*.spec.js"
 
 [[analyzers]]
   name = "javascript"
-  enabled = true
+  enabled = false

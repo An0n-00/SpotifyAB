@@ -9,7 +9,7 @@
 [![GitHub license](https://img.shields.io/github/license/An0n-00/SpotifyAB?label=License&color=orange)](https://github.com/An0n-00/SpotifyAB/blob/main/LICENSE)  
 [![GitHub last commit](https://img.shields.io/github/last-commit/An0n-00/SpotifyAB?label=Last%20Commit&color=teal)](https://github.com/An0n-00/SpotifyAB/commits/main)  
 [![GitHub contributors](https://img.shields.io/github/contributors/An0n-00/SpotifyAB?label=Contributors&color=gold)](https://github.com/An0n-00/SpotifyAB/graphs/contributors)  
-[![GitHub downloads](https://img.shields.io/github/downloads/An0n-00/SpotifyAB/total?label=Downloads&color=purple)](https://github.com/An0n-00/Spotify
+[![GitHub downloads](https://img.shields.io/github/downloads/An0n-00/SpotifyAB/total?label=Downloads&color=purple)](https://github.com/An0n-00/SpotifyAB/releases)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/An0n-00/SpotifyAB?label=Monthly%20Commits&color=blue)](https://github.com/An0n-00/SpotifyAB/pulse)  
 [![GitHub open pull requests](https://img.shields.io/github/issues-pr/An0n-00/SpotifyAB?label=Open%20PRs&color=cyan)](https://github.com/An0n-00/SpotifyAB/pulls)  
 

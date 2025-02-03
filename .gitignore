@@ -1,5 +1,6 @@
 /testing
 SpotifyABClient/*.user
+SpotifyABClient/SpotifyAB.sln.DotSettings.user
 
 # Credits @ //github.com/aspnetboilerplate/aspnet-core-template/blob/master/.gitignore
 

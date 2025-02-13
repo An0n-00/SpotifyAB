@@ -23,7 +23,8 @@
         "blog",
         "content",
         "maintenance",
-        "projectManagement"
+        "projectManagement",
+        "question"
       ]
     }
   ],

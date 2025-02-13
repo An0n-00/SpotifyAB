@@ -16,6 +16,18 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/142223573?v=4",
       "profile": "https://an0n-00.github.io/",
       "contributions": [
+        "code",
+        "doc",
+        "design",
+        "bug",
+        "blog",
+        "content",
+        "maintenance",
+        "projectManagement",
+        "question",
+        "research",
+        "review",
+        "security",
         "tool"
       ]
     }

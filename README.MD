@@ -1,4 +1,7 @@
 <div align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Spotify AdBlocker (SpotifyAB)  
 
@@ -102,6 +105,20 @@ If you want to build the client app yourself, follow these steps:
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://an0n-00.github.io/"><img src="https://avatars.githubusercontent.com/u/142223573?v=4?s=100" width="100px;" alt="Anon"/><br /><sub><b>Anon</b></sub></a><br /><a href="https://github.com/An0n-00/SpotifyAB/commits?author=An0n-00" title="Code">💻</a> <a href="https://github.com/An0n-00/SpotifyAB/commits?author=An0n-00" title="Documentation">📖</a> <a href="#design-An0n-00" title="Design">🎨</a> <a href="https://github.com/An0n-00/SpotifyAB/issues?q=author%3AAn0n-00" title="Bug reports">🐛</a> <a href="#blog-An0n-00" title="Blogposts">📝</a> <a href="#content-An0n-00" title="Content">🖋</a> <a href="#maintenance-An0n-00" title="Maintenance">🚧</a> <a href="#projectManagement-An0n-00" title="Project Management">📆</a> <a href="#question-An0n-00" title="Answering Questions">💬</a> <a href="#research-An0n-00" title="Research">🔬</a> <a href="https://github.com/An0n-00/SpotifyAB/pulls?q=is%3Apr+reviewed-by%3AAn0n-00" title="Reviewed Pull Requests">👀</a> <a href="#security-An0n-00" title="Security">🛡️</a> <a href="#tool-An0n-00" title="Tools">🔧</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 

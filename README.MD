@@ -1,3 +1,6 @@
+> [!important]
+> This project is decommisioned due to personal and functional reasons..... To replace the adblock mechanism and to enjoy ad-free music, check out SPOT X: https://github.com/SpotX-Official/SpotX
+
 <div align="center">
 
 # Spotify AdBlocker (SpotifyAB)  
